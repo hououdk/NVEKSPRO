@@ -1,0 +1,345 @@
+/* Vi har nestet via SCSS hvor vi har foelt vi kunne, nogle steder, hvis man nestede, så ville det drille på siden, så de steder vi har nestet, er det bevidst. */
+
+/* SCSS variabler */
+
+
+$font: tahoma, arial, sans-serif;
+$baggrund: #F4F4EE;
+$blue: #99CCCC;
+$orange: #F89920; 
+$menu: #ffffff;
+$menu-font: #95989A;
+$markering: #5E6061;
+
+
+/*  styrer alt på siden, det er generelle ting så som vores Font som aldrig skifter */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: $font;
+}
+
+h2, p {
+	color: $menu-font;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+h1 {
+	color: $markering;
+}
+
+h3 {
+	color: $markering;
+}
+
+body {
+	background-color:  $baggrund;
+}
+
+a {
+	background: $baggrund;
+	text-align: center;
+	color: $menu-font;
+	font-weight: bold;
+	padding: 20px 15px;
+	text-decoration: none;	
+}
+
+footer {
+	overflow: hidden;
+	padding: 10px 0 10px 0;
+	background: $menu;
+	border-top: 1px solid $menu-font;
+	font-size: 12px; 
+	text-align: center;
+    color: $menu-font;
+	z-index: 20000;
+	.socialmedia {
+		float: right;
+		margin-right: 10px;
+		
+		i {
+			margin-right: 10px;
+			font-size: 1.2em;
+		}
+	}
+}
+
+
+/* mobil media queries */
+@media (max-width:668px){
+	.mobil-logo {
+		display: inline-block!important;
+	}
+	
+	.kolonne, .kolonne2 {
+		width: 100% !important;
+	}
+	
+//vis mobilmenu
+	.mobile {
+	display: block;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+		
+		div {
+			display: none;
+		}
+	}
+	/*skjul menu for desktop/tablet version*/
+	.desktop {
+		display: none !important;
+	}
+	.sidebar, .app-box, .stem {
+		position: relative !important;
+	}
+	
+	.app-box, .stem {
+		max-width: 100% !important;
+		margin: 0 auto !important;
+		margin-bottom: 10px !important;
+		margin-top: 10px !important;
+		width: 85% !important;
+	}
+	
+	.sidebar {
+		max-width: 100% !important;
+	}
+	
+	.content {
+		max-width: 100% !important;
+		margin-top: 5px !important;
+	}
+	.container {
+		flex-direction: column;
+	}
+	footer {
+		overflow: hidden;
+		padding: 10px 0 10px 0;
+		background: $menu;
+		border-top: 1px solid $menu-font;
+		font-size: 12px; 
+		text-align: center;
+    	color: $menu-font;
+		z-index: 20000;
+	.socialmedia {
+		float: right;
+		margin-right: 10px;
+		
+			i {
+			margin-top: 5px !important;
+			font-size: 1.2em;
+		}
+	}
+}
+} /* queries slut */
+
+
+.selected { /* wayfinding på menuen */
+	color: $markering;
+}
+
+
+/*styling button */
+
+.mobile button {
+	position:absolute;
+	top: 15px;
+	right: 15px;
+	height: 30px;
+	width: 30px;
+	background: url("hamburger.svg") center no-repeat;
+	background-size: 80%;
+	border: 1px solid $markering;
+	border-radius: 3px;
+	transition: 500ms ease-in;
+}
+	
+.mobile button.expanded {
+	transform: rotate(90deg);
+}
+		
+		
+.mobile a {
+	display: block;
+	border-bottom: 1px solid $menu-font;
+}
+/*mobil button styling slut*/
+
+.mobil-logo { /* dette er css som soerger for at vores logo forbliver på siden efter vores hvide bar er vaek */
+		width: 100px;
+		margin-top: 10px;
+		margin-left: 20px;
+		display: none;
+	}
+	
+/* Desktop menu styling */
+
+.desktop {
+	z-index: 200;
+	width: 100%;
+	top: 0;
+	position: fixed;
+	display: none;
+	overflow: hidden;
+	background: $baggrund;
+	padding-top: 10px;
+ 	.desktop a {
+		width: 0,8em;
+		float: right;
+		box-sizing: border-box;
+		.logo {
+			float: left;
+			width: 100px;
+			height: auto;
+			margin-left: 20px;
+			margin-bottom: 3px;
+			margin-top: -10px;
+			.menu {
+				float: right;
+				margin-top: 12px;
+				display: block;
+			}
+		}
+	}
+}
+/*desktop menu styling slut*/
+.container {
+	margin-top: 30px;
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+}
+	.content { /* dette er venstre side af af det samlede struktur */
+		max-width: calc(100%-330px);
+		min-height: 95%;
+		margin-top: 60px;
+		text-align: left;
+}
+		.text {
+		width: 70%;
+		margin: 0 auto;
+			.NemtValg-pics {
+				max-width: 100%;
+				height: auto;
+				img {
+					width: 100%;
+					height: auto;
+					box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23), 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+					box-sizing: border-box;
+					}
+					
+				.videobillede {
+					box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23), 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+				}
+			}
+		}
+
+/* dette er classer på App siden */
+
+.appikon {
+	width: 80%;
+	margin-bottom: 10px;
+}
+
+.videobox {
+	width: 100%;
+	background: url("billeder/logo-pil.jpg") no-repeat;
+	background-size: cover;
+	background-position: center center;
+	height: 250px;
+}
+.kolonne {
+	float: left;
+	width: 48%;
+	padding-right: 5px;
+	box-sizing: border-box;
+}
+
+.kolonne2 {
+	float: right;
+	width: 50%;
+}
+
+.nvv {
+	padding: 0px !important;
+}
+/* app side slut */
+
+
+	.sidebar { /* den blaa sidebar */
+		max-width: 300px;
+		min-width: 300px;
+		width: 100%;
+		background-color: $blue;
+	.app-box { /* den oeverste boks i den blaa sidebar */
+		font-size: 0.8em;
+		position: fixed;
+		border-radius: 25px;
+		padding: 20px;
+		max-width: 70%;
+		margin: 60px 32px 0 32px;
+		text-align: center;
+		background-color: $menu;
+	.appbutton {
+		border-radius: 15px;
+		background-color: $orange;
+		border: none;
+		color: $menu;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+			}
+	}
+}
+
+.appbutton2 { /* en div som soerger for at at vores a styling fra tidligere ikke styler app button knappen */
+	background: none;
+}
+
+
+.stem { /* dette er den anden boks i den blaa sidebar */
+	position: fixed;
+	font-size: 0.8em;
+	border-radius: 25px;
+	padding: 20px;
+	max-width: 70%;
+	margin: 290px 32px 0 32px;
+	background-color: $menu;
+		input[type=radio]{
+			-webkit-appearance: none;
+			width: 15px;
+			height: 15px;
+			border: 3px solid $markering;
+			border-radius: 100%;
+			vertical-align: middle;
+			margin-right: 10px;
+			
+			&:checked {
+				background: $orange;
+			}
+		}
+
+		input[type=submit] {
+				-webkit-appearance: none;
+    			border-radius: 15px;
+				width: 50%;
+				background-color: $orange;
+				border: none;
+				color: $menu;
+				padding: 15px 32px;
+				display: block;
+				font-size: 16px;
+				margin: 0 auto;
+				cursor: pointer;
+	}
+}

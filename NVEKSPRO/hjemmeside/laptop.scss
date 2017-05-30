@@ -1,0 +1,80 @@
+/* SCSS variabler */
+
+$font: tahoma, arial, sans-serif;
+$baggrund: #F4F4EE;
+$blue: #99CCCC;
+$orange: #F89920; 
+$menu: #ffffff;
+$menu-font: #95989A;
+$markering: #5E6061;
+
+
+@media (min-width:1025px){
+	
+* {
+	margin: 0;
+	padding: 0;
+	font-family: $font;
+}
+
+body {
+	background-color:  $baggrund;
+}
+//skjul mobilmenu
+.mobile {
+	display:none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	div {
+		display: none;
+	}
+	border-bottom: 1px solid $menu-font;
+}
+
+
+a {
+	background: $menu;
+	text-align: center;
+	color: $menu-font;
+	font-weight: bold;
+	text-decoration: none;
+
+	
+}
+.desktop a {
+	width: 0,8em;
+	box-sizing: border-box;
+}
+
+.desktop {
+	overflow: hidden;
+	background: $menu;
+	border-bottom: 1px solid $menu-font;
+	padding-top: 10px;
+ }
+	
+.desktop {
+	display: block;
+}
+.logo {
+	float: left;
+	width: 100px;
+	height: auto;
+	margin-left: 20px;
+	margin-bottom: 3px;
+	margin-top: -10px;
+}
+.menu {
+	float: right;
+	margin-top: 12px;
+}
+	
+.menu a {
+	padding-right: 25px;
+}
+.sidebar {
+	min-width: 300px;
+	max-width: 300px;
+	}
+}
